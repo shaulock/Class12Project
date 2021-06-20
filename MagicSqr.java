@@ -2,10 +2,14 @@ import java.util.*;
 
 class MagicSqr
 {
-	int msqr[][], n, sum;
+	// Declating class variables
+	int[][] msqr;// Array to store the magic square
+	int n/* int to store the number of rows */, sum/* int to store the sum of each row or column */;
 
+	// Default constructor
 	MagicSqr()
 	{
+		// Initialising class variable to appropriate values
 		n = 3;
 		msqr=new int[3][3];
 		for(int i = 0; i < n; i++)
@@ -13,45 +17,54 @@ class MagicSqr
 				msqr[i][j] = 0;
 	}
 
+	// Function to fill the magic square
 	void generate()
 	{
-		int number = 1;
-    	int row = 0;
-    	int column = n / 2;
-    	int curr_row;
-    	int curr_col;
-    	while (number <= n * n)
+		int number = 1;// stores the current number to be placed in the magic square
+    	int row = 0;// stores the row position at which number was stored
+    	int column = n / 2;// stores the column position at which number was stored
+    	int curr_row;// stores current row position
+    	int curr_col;// stores current column position
+    	while (number <= n * n)// loop to fill the magic square
     	{
-	        msqr[row][column] = number;
-	        number++;
-	        curr_row = row;
-	        curr_col = column;
-	        row -= 1;
-	        column += 1;
+	        msqr[row][column] = number;// placing number at row X column
+	        number++;// incrementing number
+	        curr_row = row;// updating current row position
+	        curr_col = column;// updating current column position
+	        row -= 1;// decrementing row position
+	        column += 1;// incremeting column position
+
+	        // Taking care of out of bounds
 	        if (row == -1)
 	            row = n - 1;
 	        if (column == n)
 	            column = 0;
+
+	        // if next position is filled shifting to next row
 	        if (msqr[row][column] != 0)
 	        {
 	            row = curr_row + 1;
 	            column = curr_col;
+
+	            // Taking care of out of bounds
 	            if (row == -1)
 	                row = n - 1;
 	        }
 	    }
 	}
 
+	// function to get the sum of a row or column
 	void findSum()
 	{
-		sum = msqr[0][0] + msqr[1][1] + msqr[2][2];
+		sum = msqr[0][0] + msqr[0][1] + msqr[0][2];
 	}
 
+	// function to sort an array
 	int[] sort(int arr[], char c)
 	{
 		switch(c)
 		{
-			case 'a':
+			case 'a':// Sorting in ascending order using selection sort
 			for(int i = 0; i < arr.length; i++)
 			{
 				int min = i;
@@ -65,7 +78,7 @@ class MagicSqr
 				arr[i] = temp;
 			}
 			break;
-			case 'd':
+			case 'd':// Sorting in descending order using selection sort
 			for(int i = 0; i < arr.length; i++)
 			{
 				int max = i;
@@ -80,12 +93,14 @@ class MagicSqr
 			}
 			break;
 		}
-		return arr;
+		return arr;// returning the sorted array
 	}
 
+	// Function to print arrays after sorting
 	void sortPrint()
 	{
 		System.out.println("\nRow wise sorted array : \n");
+		// Row wise sorting
 		int sorted[][] = new int[3][3];
 		for(int i = 0; i < 3; i++)
 		{
@@ -96,8 +111,10 @@ class MagicSqr
 			for(int k = 0; k < 3; k++)
 				sorted[i][k] = temp[k];
 		}
-		displayArr(sorted);
+		displayArr(sorted);// printing sorted array
+		
 		System.out.println("\nColumn wise sorted array : \n");
+		// column wise sorting
 		for(int i = 0; i < 3; i++)
 		{
 			int temp[] = new int[3];
@@ -107,9 +124,10 @@ class MagicSqr
 			for(int k = 0; k < 3; k++)
 				sorted[k][i] = temp[k];
 		}
-		displayArr(sorted);
+		displayArr(sorted);// printing sorted array
 	}
 
+	// Function to print an array
 	void displayArr(int[][] arr)
 	{
 		for(int i = 0; i < 3; i++)
@@ -120,10 +138,14 @@ class MagicSqr
 		}
 	}
 
+	// Display function
 	void display()
 	{
-		findSum();
-		System.out.println("The 3X3 Magic Square(row-wise sum is mentioned at the end of each row\nand column-wise sum is mentioned at the end of each column) : \n");
+		findSum();// calling the findSum function
+		System.out.println("The 3X3 Magic Square(row-wise sum is mentioned at the end of each row" +
+							+ "\nand column-wise sum is mentioned at the end of each column) : \n");
+
+		// Printing with sum of the rows and columns mentioned
 		for(int i = 0; i <= 3; i++)
 		{
 			for(int j = 0; j <= 3; j++)
@@ -140,12 +162,17 @@ class MagicSqr
 			System.out.println();
 		}
 		System.out.println(sum + "\t" + sum + "\t" + sum);
+		
+		// Printing sorted arrays
 		sortPrint();
 	}
 
+	// Main method to create objects and call functions accordingly
 	public static void main(String[] args)
 	{
-		MagicSqr msq=new MagicSqr();
+		MagicSqr msq=new MagicSqr();// Creating an object
+
+		// Calling functions accordingly
 		msq.generate();
 		msq.display();
 	}
