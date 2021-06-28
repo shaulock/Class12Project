@@ -2,28 +2,33 @@ import java.util.*;
  
 class Roman
 {
-    int n;
-    String r;
+    // Declaring class variables
+    int n;// Stores the decimal number
+    String r;// Storees the roman number
 
+    // Default constructor
     Roman()
     {
+        // Initialising class variables to default values
         n = 0;
         r = "";
     }
 
+    // Function that takes integer input from user
     int get_int(String s)
     {
+        // Taking input
         Scanner sc=new Scanner(System.in);
         System.out.print(s);
         try
         {
             int x = sc.nextInt();
-            return x;
+            return x;// Returning input integer
         }
-        catch(Exception e)
+        catch(Exception e)// Input mismatch
         {
             System.out.println("Please enter an integer only");
-            get_int(s);
+            get_int(s);// calling function again
         }
         return 0;
     }
@@ -97,7 +102,8 @@ class Roman
                     i++;
                 }
             }
-            else {
+            else
+            {
                 res = res + s1;
             }
         }
@@ -110,8 +116,9 @@ class Roman
         String roman = "";
         if(n >= 4000)
         {
-            roman = "(" + decimalToRoman(n/1000) + ")";
-            n = n%1000;
+            System.out.println("Numbers more than 3999 are not supported");
+            System.exit(1);
+            return "";
         }
         while(n > 0)
         {
@@ -212,7 +219,14 @@ class Roman
         switch(choice)
         {
             case 'r':
-            System.out.println(r + " converted to integer is " + romanToDecimal(r));
+            int convt = romanToDecimal(r);
+            if(convt == romanToDecimal(decimalToRoman(convt)))
+                System.out.println(r + " converted to integer is " + romanToDecimal(r));
+            else
+            {
+                System.out.println("It is not a valid Roman number");
+                System.exit(1);
+            }
             break;
             case 'i':
             System.out.println(n + " converted to roman is " + decimalToRoman(n));
