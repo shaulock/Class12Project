@@ -1,3 +1,17 @@
+/**
+ * Algorithm
+ * 
+ * Start
+ * Take necessary inputs
+ * Use a recursive function to make tap
+ * Reverse Tap to get Tip
+ * Run a loop from tip up to Tap
+ * CHeck every number in between for perfect square
+ * If perfect square then print it
+ * End
+ */
+
+
 import java.util.*;
 
 class TipTap

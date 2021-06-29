@@ -1,3 +1,17 @@
+/**
+ * Algorithm
+ * 
+ * Start
+ * Take necessary inputs
+ * create recursive factorial function
+ * create recursive power function
+ * set sum initially to 1.0
+ * start loop from 1 up to m
+ * change sum to factorial of i divided by (ith power of p + previous value of sum)
+ * When the loop ends display the required things
+ * End
+ */
+
 import java.util.*;
 
 class clSomeSeries
@@ -35,14 +49,10 @@ class clSomeSeries
 	// function that calculates the sum of the series
 	void fnCalculate()
 	{
-		for(int i = 0; i <= m; i++)
+		sum = 1.0;
+		for(int i = 1; i <= m; i++)
 		{
-			if(i==0)
-				sum = (double)fnPower(p, i);
-			else
-			{
-				sum = (double)fnFact(i)/(double)((fnPower(p, i)) + sum);
-			}
+			sum = (double)fnFact(i)/(double)((fnPower(p, i)) + sum);
 		}
 	}
 

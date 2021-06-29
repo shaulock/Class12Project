@@ -1,3 +1,16 @@
+/**
+ * Algorithm
+ * 
+ * Start
+ * Create Personal class using the class description given
+ * Create Retire class extending Personal class using the class description
+ * for gratituity use ternary operator to check and then calculate the gratituity
+ * for pf, calculate according to the formula given
+ * Take inputs in main method and create object, call functions
+ * Display the required things
+ * End
+ */
+
 import java.util.*;
 
 class Retire extends Personal
@@ -26,8 +39,7 @@ class Retire extends Personal
 	// Function to calculate gratuity
 	void gratuity()
 	{
-		if(yrs > 10)
-			grat = basic_pay * 12;
+		grat = yrs > 10 ? basic_pay * 12 : 0.0;
 	}
 
 	// Function to display the necessary things

@@ -1,3 +1,15 @@
+/**
+ * Algorithm
+ * 
+ * Start
+ * Take necessary inputs, and validate then and there
+ * For converting a number to words use switch case to use fallthough and recursion to your advantage
+ * To convert the time to words, first convert the standard times, like half past some hour, some hour o' clock quarter past some-hour, quarter to some-hour
+ * For minutes less than 30, convert them as it is and print like ome-minutes past some-hour
+ * for minutes more than 30, convert minutes - 30 to words and print like some-minutes to some-hour
+ * End
+ */
+
 import java.util.*;
 
 class Time
@@ -71,11 +83,11 @@ class Time
 			case 11: return "eleven";
 			case 12: return "twelve";
 			case 13: return "thirteen";
-			case 14: return "fourteen";
-			case 16: return "sixteen";
-			case 17: return "seventeen";
-			case 18: return "eighteen";
-			case 19: return "nineteen";
+			case 14:
+			case 16:
+			case 17:
+			case 18:
+			case 19: return convt(i - 10) + "teen";
 			case 20: return "twenty";
 			case 21:
 			case 22:

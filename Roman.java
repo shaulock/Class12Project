@@ -1,3 +1,39 @@
+/**
+ * Algorithm
+ * 
+ * Start
+ * Take necessary inputs
+ * for roman to decimal
+ * convert a character to its decimal equivalent
+ * not check if the next characters decimal value is more than this value, if yes substract this from the next value
+ * if no, then continue with adding this to the previous sum
+ * if all the characters are done converting and values are done adding return the sum
+ * The sum was the converted decimal, but we need to check if the entered roman was correct. to do so, we will convert this decimal to roman through our function
+ * if the roman user entered was same as our roman, the roman was correct and we will print it
+ * else print error and quit
+ * for decimal to roman
+ * check if the number is more than 3999, if yes print error message and quit
+ * else continue with conversion
+ * start a while loop until number is 0
+ * if the decimal is more than 1000 (number/1000) number of Ms and, update the number to number % 1000
+ * else if the number is more than 500 but less than 900, put a D and update the number to number % 500
+ * else if the number was more than 900, put CM, and update the number to number % 100
+ * else if the number is more than 100 but less than 400, put (number/100) number of Cs and update the number to number % 100
+ * else if the number was more than 400, put a CD, and update the number to number % 100
+ * else if the number is more than 50 but less than 90, put a L and update the number to number % 50
+ * else if the number was more than 90, put XC, and update the number to number % 10
+ * else if the number is more than 10 but less than 40, put (number/10) number of Xs and update the number to number % 10
+ * else if the number was more than 40, put a XL and update the number to number % 10
+ * else if the number is more than 5 but less than 9, put a V and update the number to number % 5
+ * else if the number was 9 put a IX and update the number to 0
+ * else if the number is more than 1 but less than 4, put (number) number of Is and update the number to 0
+ * else if the number was 4 put a IV and update the number to 0
+ * continue this until the number is 0 as stated in the while loop
+ * Once fully converted return the converted roman string, no checking is required
+ * display the required things
+ * End
+ */
+
 import java.util.*;
  
 class Roman
