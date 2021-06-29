@@ -33,34 +33,41 @@ class Roman
         return 0;
     }
 
+    // Function to take input
     void input()
     {
+        // Taking input of choice
         Scanner sc=new Scanner(System.in);
         System.out.println("Choices :- \n\t1. Roman to Integer\n\t2. Integer to Roman");
         int choice = get_int("Enter choice : ");
+
+        // Going forward according to choice
         switch(choice)
         {
-            case 1:
+            case 1:// Roman to decimal
             System.out.print("Enter a roman numeral : ");
             r = sc.next();
             display('r');
             break;
-            case 2:
+
+            case 2:// Decimal to roman
             n = get_int("Enter an integer : ");
-            while(n <= 0)
+            while(n <= 0)// Checking for valid input
             {
                 System.out.println("Integer to convert must be greater than ZERO");
                 n = get_int("Enter a POSITIVE integer : ");
             }
             display('i');
             break;
-            default:
+
+            default:// Wrong choice
             System.out.println("Wrong choice");
             input();
             break;
         }
     }
 
+    // Function that returns the decimal value of a roman literal
     int value(char r)
     {
         if (r == 'I')
@@ -80,10 +87,12 @@ class Roman
         return -1;
     }
 
+    // Function to convert roman to decimal
     int romanToDecimal(String str)
     {
-        int res = 0;
- 
+        int res = 0;// resulting decimal number
+    
+        // Converting
         for (int i = 0; i < str.length(); i++)
         {
             int s1 = value(str.charAt(i));
@@ -108,18 +117,21 @@ class Roman
             }
         }
 
-        return res;
+        return res;// Returning the converted number
     }
 
+    // Function to convert decimal to roman
     String decimalToRoman(int n)
     {
-        String roman = "";
-        if(n >= 4000)
+        String roman = "";// Resulting roman number
+        if(n >= 4000)// Validation
         {
             System.out.println("Numbers more than 3999 are not supported");
             System.exit(1);
             return "";
         }
+
+        // Converting
         while(n > 0)
         {
             if(n >= 1000)
@@ -211,32 +223,37 @@ class Roman
             }
         }
 
-        return roman;
+        return roman;// Returning converted number
     }
 
+    // Function to display the required things
     void display(char choice)
     {
+        // Going according to user choice
         switch(choice)
         {
-            case 'r':
-            int convt = romanToDecimal(r);
-            if(convt == romanToDecimal(decimalToRoman(convt)))
-                System.out.println(r + " converted to integer is " + romanToDecimal(r));
-            else
+            case 'r':// Roman to decimal
+            int convt = romanToDecimal(r);// Temporary storage of the value for validation
+            if(convt == romanToDecimal(decimalToRoman(convt)))// Validating the roman number entered
+                System.out.println(r + " converted to integer is " + romanToDecimal(r));// Printing if valid
+            else// Else exiting with message
             {
                 System.out.println("It is not a valid Roman number");
                 System.exit(1);
             }
             break;
-            case 'i':
-            System.out.println(n + " converted to roman is " + decimalToRoman(n));
+
+            case 'i':// Decimal to roman
+            System.out.println(n + " converted to roman is " + decimalToRoman(n));// No chexking required
             break;
         }
     }
 
+    // Main method to create objects and call functions accordingly
     public static void main(String args[])
     {
-        Roman rmn = new Roman();
+        Roman rmn = new Roman();// Creating object
+        // Calling functions accordingly
         rmn.input();
     }
 }
