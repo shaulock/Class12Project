@@ -158,7 +158,7 @@ class Routes
 		}
 	}
 
-	// Displaying the possible routes
+	// Function to display the possible routes
 	void display(String s1[], String s2[])
 	{
 		if (s2.length <= 1)

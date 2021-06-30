@@ -45,7 +45,7 @@ class Alphagram
 		{
 			Scanner sc=new Scanner(System.in);
 			// Taking input of the sentences
-			System.out.println("Enter a string having " + n + " sentences ended with either ‘?’ or ‘.’ or ‘!’");
+			System.out.println("Enter a string having " + n + " sentences ended with either '?' or '.' or '!'");
 			String s = sc.nextLine();
 			s = s.trim();
 			int l = s.length();

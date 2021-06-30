@@ -24,8 +24,8 @@ class clTravel
 		while(i < arAge.length)
 		{
 			System.out.print("Enter the age of tourist number " + (i+1) + ": ");
-			x = sc.nextInt();
-
+			x = (int)(Math.round(Math.random()*1000)%125) + 1;
+			System.out.println(x);
 			// Validating input
 			if(x <= 0)
 			{
