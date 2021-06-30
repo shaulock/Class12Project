@@ -5,7 +5,7 @@
  * Take input and check for odd characters less than 10 immediately
  * check if the alphabets and digits are repeating or alternate
  * check if the alphabets lie beyond J and T or not
- * check if any J in the password is followed by a digit or not
+ * check if any J or T in the password is followed by an odd digit or not
  * If every condition is satisfied print the validation statement
  * If any condition was found false call invalid function with respective message and do System.exit(1)
  * End
@@ -64,8 +64,8 @@ class checkPass
 			else if(c >= '0' && c <= '9')// Checking is the charcetr is number
 			{
 				if(prev == 'J' || prev == 'T')// Checking if prev was a 'J' or a 'T'
-					if(c == '1' || c == '3' || c == '5' || c == '7' || c == '9')// checking if the 'J' or the 'T' was followed by an odd digit
-						inValid("Alphabet" + prev + "is followed by an even digit");
+					if(!(c == '1' || c == '3' || c == '5' || c == '7' || c == '9'))// checking if the 'J' or the 'T' was followed by an odd digit
+						inValid("Alphabet " + prev + " is followed by an even digit");
 					else// else setting prev to c
 						prev = c;
 

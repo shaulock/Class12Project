@@ -159,7 +159,7 @@ class MagicSqr
 	void display()
 	{
 		findSum();// calling the findSum function
-		System.out.println("The 3X3 Magic Square(row-wise sum is mentioned at the end of each row" +
+		System.out.println("The 3X3 Magic Square(row-wise sum is mentioned at the end of each row"
 							+ "\nand column-wise sum is mentioned at the end of each column) : \n");
 
 		// Printing with sum of the rows and columns mentioned
