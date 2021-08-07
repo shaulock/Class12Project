@@ -1,20 +1,3 @@
-/**
- * Algorithm
- * 
- * Start
- * Run a loop from 1 to 9
- * place 1 at the middle of the first row
- * now decrement the row and column by 1
- * if the row becomes -1 shift to the last row and if the column becomes -1 shift to the last column
- * try to place the next value in the loop at the new position
- * if the position is occupied already, go to the previous column and drop down 1 row and place the loop value there
- * continue the same logic until you reach 9
- * after the loop ends, print the array
- * sort the array row-wise in ascending order and print it
- * then sort the array in column-wise descending and print it
- * End
- */
-
 import java.util.*;
 
 class MagicSqr

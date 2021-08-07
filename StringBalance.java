@@ -1,19 +1,3 @@
-/**
- * Algorithm
- * 
- * Start
- * Take necessary inputs
- * Loop over the string
- * check if there is any character other than a or z if yes return false
- * count the number a and z
- * if they are not equal, return false
- * create a string array with each element being the character appended to the position and the number of that letter
- * check with position if any number of a proceeds the same number of z or vice versa if yes return false
- * If no return statement encountered return true
- * print the necessary statement
- * End
- */
-
 import java.util.*;
 
 class StringBalance

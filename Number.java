@@ -1,26 +1,3 @@
-/**
- * Algorithm
- * 
- * Start
- * Take necessary inputs
- * Store the base to be converted to in a variable
- * create an alphabet array for future use to make things easier
- * if the number is negative make it positive but store the sign in another variable
- * now take the integer part of the number entered
- * start while loop until integer part is 0
- * take mod of the integer part with the base that you stored, if mod < 10, concat it to the result from front
- * if mod >= 10, concat the alphabet at the position mod - 10 of the array created before
- * update the number to number / base
- * after the loop is over, add the sign if any, check if the enetered number had any decimal part if no return
- * else take the fractional part and start converting that
- * multiply the fractional part with the decimal to base that you stored, then take the integer part of the product
- * if the integer part of the product is < 10, concat it to the result after decimal from back
- * if the integer part is >= 10,  concat the alphabet at the position integer part - 10 of the array created before
- * continue the loop until the fractional part is 0 or the number of loop exceeds 10
- * print the converted number
- * End
- */
-
 import java.util.*;
 
 class Number

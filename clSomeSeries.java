@@ -1,17 +1,3 @@
-/**
- * Algorithm
- * 
- * Start
- * Take necessary inputs
- * create recursive factorial function
- * create recursive power function
- * set sum initially to 1.0
- * start loop from 1 up to m
- * change sum to factorial of i divided by (ith power of p + previous value of sum)
- * When the loop ends display the required things
- * End
- */
-
 import java.util.*;
 
 class clSomeSeries

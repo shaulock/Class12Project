@@ -1,16 +1,3 @@
-/**
- * Algorithm
- * 
- * Start
- * Take input and check for odd characters less than 10 immediately
- * check if the alphabets and digits are repeating or alternate
- * check if the alphabets lie beyond J and T or not
- * check if any J or T in the password is followed by an odd digit or not
- * If every condition is satisfied print the validation statement
- * If any condition was found false call invalid function with respective message and do System.exit(1)
- * End
- */
-
 import java.util.*;
 
 class checkPass
