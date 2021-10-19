@@ -261,7 +261,6 @@ class Cypher
 			case 1:
 			input(choice);
 			encrypt();
-
 			System.out.println("Encrypted String Is :-");
 			break;
 			case 2:
