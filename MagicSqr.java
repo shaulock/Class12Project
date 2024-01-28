@@ -1,4 +1,4 @@
-import java.util.*;
+
 
 class MagicSqr
 {
@@ -11,7 +11,7 @@ class MagicSqr
 	{
 		// Initialising class variable to appropriate values
 		n = 3;
-		msqr=new int[3][3];
+		msqr=new int[9][9];
 		for(int i = 0; i < n; i++)
 			for(int j = 0; j < n; j++)
 				msqr[i][j] = 0;
